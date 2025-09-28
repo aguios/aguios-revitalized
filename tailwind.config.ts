@@ -47,6 +47,13 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        aguios: {
+          primary: "hsl(var(--aguios-primary))",
+          "primary-light": "hsl(var(--aguios-primary-light))",
+          secondary: "hsl(var(--aguios-secondary))",
+          accent: "hsl(var(--aguios-accent))",
+          warm: "hsl(var(--aguios-warm))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
