@@ -8,28 +8,28 @@ export const BooksSection = () => {
       title: "Amor: a verdadeira natureza de Deus",
       author: "Pr. Wendell Costa",
       description: "Uma profunda reflexão sobre o amor de Deus como Sua natureza essencial e como isso transforma nossa compreensão da fé cristã.",
-      featured: true
+      year: 2019
     },
     {
       title: "Tempo de Chorar, Tempo de Crescer",
       subtitle: "Por que Deus permite o sofrimento?",
       author: "Bruna Monastirski",
       description: "Uma análise bíblica sobre o propósito do sofrimento na vida cristã e como Deus usa as dificuldades para nosso crescimento espiritual.",
-      featured: true
+      year: 2019
     },
     {
       title: "Mulher Cristã",
       subtitle: "Vidas com propósitos",
       author: "Rulyanne Silva",
       description: "O livro trata sobre os diversos papéis da mulher cristã: adoradora, esposa, mãe e muito mais.",
-      featured: false
+      year: 2023
     },
     {
       title: "A Parábola do Semeador",
       subtitle: "Fundamentos para uma vida frutífera",
       author: "Bruna Monastirski e Wendell Costa",
       description: "Revelações sobre como um discípulo de Jesus pode se tornar frutífero em Deus através do estudo da parábola do semeador.",
-      featured: false
+      year: 2025
     }
   ];
 
@@ -43,8 +43,7 @@ export const BooksSection = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-aguios-primary to-aguios-secondary mx-auto mb-8" />
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Em agosto de 2019, o Ministério Águios lançou seus dois primeiros livros, 
-            oferecendo estudos profundos sobre temas fundamentais da fé cristã.
+            Estudos profundos sobre temas fundamentais da fé cristã.
           </p>
         </div>
 
@@ -76,14 +75,12 @@ export const BooksSection = () => {
                   </p>
                 </div>
 
-                {/* Badge for featured books */}
-                {book.featured && (
-                  <div className="flex justify-center">
-                    <span className="bg-gradient-to-r from-aguios-primary to-aguios-secondary text-white px-3 py-1 rounded-full text-sm font-medium">
-                      Lançamento 2019
-                    </span>
-                  </div>
-                )}
+                {/* Year Badge */}
+                <div className="flex justify-center">
+                  <span className="bg-gradient-to-r from-aguios-primary to-aguios-secondary text-white px-3 py-1 rounded-full text-sm font-medium">
+                    Lançamento {book.year}
+                  </span>
+                </div>
               </div>
             </Card>
           ))}
