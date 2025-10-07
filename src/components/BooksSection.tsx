@@ -1,6 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ExternalLink, ShoppingCart } from "lucide-react";
+import capaAmor from "@/assets/capa_amor.jpg";
+import capaTempoDeChorar from "@/assets/capa_tempo_de_chorar_tempo_de_crescer.jpg";
+import capaMulheresCristas from "@/assets/capa_mulheres_cristas.jpg";
+import capaParabolaDoSemeador from "@/assets/capa_a_parabola_do_semeador.jpg";
 
 export const BooksSection = () => {
   const books = [
@@ -8,28 +12,32 @@ export const BooksSection = () => {
       title: "Amor: a verdadeira natureza de Deus",
       author: "Pr. Wendell Costa",
       description: "Uma profunda reflexão sobre o amor de Deus como Sua natureza essencial e como isso transforma nossa compreensão da fé cristã.",
-      year: 2019
+      year: 2019,
+      image: capaAmor
     },
     {
       title: "Tempo de Chorar, Tempo de Crescer",
       subtitle: "Por que Deus permite o sofrimento?",
       author: "Bruna Monastirski",
       description: "Uma análise bíblica sobre o propósito do sofrimento na vida cristã e como Deus usa as dificuldades para nosso crescimento espiritual.",
-      year: 2019
+      year: 2019,
+      image: capaTempoDeChorar
     },
     {
       title: "Mulher Cristã",
       subtitle: "Vidas com propósitos",
       author: "Rulyanne Silva",
       description: "O livro trata sobre os diversos papéis da mulher cristã: adoradora, esposa, mãe e muito mais.",
-      year: 2023
+      year: 2023,
+      image: capaMulheresCristas
     },
     {
       title: "A Parábola do Semeador",
       subtitle: "Fundamentos para uma vida frutífera",
       author: "Bruna Monastirski e Wendell Costa",
       description: "Revelações sobre como um discípulo de Jesus pode se tornar frutífero em Deus através do estudo da parábola do semeador.",
-      year: 2025
+      year: 2025,
+      image: capaParabolaDoSemeador
     }
   ];
 
@@ -52,9 +60,13 @@ export const BooksSection = () => {
           {books.map((book, index) => (
             <Card key={index} className="p-8 border-none aguios-shadow aguios-hover-lift bg-card">
               <div className="space-y-6">
-                {/* Book Icon/Placeholder */}
-                <div className="w-16 h-20 mx-auto bg-gradient-to-br from-aguios-primary to-aguios-secondary rounded-lg flex items-center justify-center">
-                  <div className="w-12 h-16 bg-white/20 rounded border-l-2 border-white/40" />
+                {/* Book Cover */}
+                <div className="mx-auto w-48 h-72 overflow-hidden rounded-lg aguios-shadow">
+                  <img 
+                    src={book.image} 
+                    alt={`Capa do livro ${book.title}`}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
 
                 {/* Book Details */}
