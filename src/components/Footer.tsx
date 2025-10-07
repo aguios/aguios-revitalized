@@ -33,7 +33,7 @@ export const Footer = () => {
                 <Youtube className="w-5 h-5" />
               </a>
               <a 
-                href="mailto:contato@aguios.org"
+                href="mailto:ministerioaguios@gmail.com"
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 aguios-transition"
               >
                 <Mail className="w-5 h-5" />
@@ -110,10 +110,10 @@ export const Footer = () => {
               <div>
                 <p className="text-white/60 text-sm">E-mail</p>
                 <a 
-                  href="mailto:contato@aguios.org" 
+                  href="mailto:ministerioaguios@gmail.com" 
                   className="text-white/80 hover:text-white aguios-transition"
                 >
-                  contato@aguios.org
+                  ministerioaguios@gmail.com
                 </a>
               </div>
               <div>

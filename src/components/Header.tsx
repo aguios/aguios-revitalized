@@ -83,7 +83,7 @@ export const Header = () => {
               <Youtube className="w-5 h-5" />
             </a>
             <a 
-              href="mailto:contato@aguios.org"
+              href="mailto:ministerioaguios@gmail.com"
               className="text-muted-foreground hover:text-aguios-primary aguios-transition"
             >
               <Mail className="w-5 h-5" />
@@ -155,7 +155,7 @@ export const Header = () => {
                   <Youtube className="w-5 h-5" />
                 </a>
                 <a 
-                  href="mailto:contato@aguios.org"
+                  href="mailto:ministerioaguios@gmail.com"
                   className="text-muted-foreground hover:text-aguios-primary aguios-transition"
                 >
                   <Mail className="w-5 h-5" />

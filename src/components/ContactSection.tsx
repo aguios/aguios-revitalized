@@ -32,10 +32,10 @@ export const ContactSection = () => {
             <Button 
               variant="outline"
               className="group"
-              onClick={() => window.location.href = 'mailto:contato@aguios.org'}
+              onClick={() => window.location.href = 'mailto:ministerioaguios@gmail.com'}
             >
               <Mail className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
-              contato@aguios.org
+              ministerioaguios@gmail.com
             </Button>
           </Card>
 
@@ -117,7 +117,7 @@ export const ContactSection = () => {
               variant="gradient"
               size="lg"
               className="w-full group"
-              onClick={() => window.location.href = 'mailto:contato@aguios.org?subject=Convite para Igreja&body=Olá, gostaria de convidar o ministério Águios para nossa igreja...'}
+              onClick={() => window.location.href = 'mailto:ministerioaguios@gmail.com?subject=Convite para Igreja&body=Olá, gostaria de convidar o ministério Águios para nossa igreja...'}
             >
               <Mail className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
               Enviar Convite por E-mail
