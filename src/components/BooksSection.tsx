@@ -16,6 +16,20 @@ export const BooksSection = () => {
       author: "Bruna Monastirski",
       description: "Uma análise bíblica sobre o propósito do sofrimento na vida cristã e como Deus usa as dificuldades para nosso crescimento espiritual.",
       featured: true
+    },
+    {
+      title: "Mulher Cristã",
+      subtitle: "Vidas com propósitos",
+      author: "Rulyanne Silva",
+      description: "O livro trata sobre os diversos papéis da mulher cristã: adoradora, esposa, mãe e muito mais.",
+      featured: false
+    },
+    {
+      title: "A Parábola do Semeador",
+      subtitle: "Fundamentos para uma vida frutífera",
+      author: "Bruna Monastirski e Wendell Costa",
+      description: "Revelações sobre como um discípulo de Jesus pode se tornar frutífero em Deus através do estudo da parábola do semeador.",
+      featured: false
     }
   ];
 
