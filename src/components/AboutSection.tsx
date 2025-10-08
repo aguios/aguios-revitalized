@@ -18,15 +18,26 @@ export const AboutSection = () => {
           {/* Text Content */}
           <div className="space-y-6">
             <p className="text-lg text-muted-foreground leading-relaxed">
-              O <strong className="text-aguios-primary">Águios</strong> é um ministério cristão de ensino bíblico que atua de forma itinerante e através da internet.
+              O <strong className="text-aguios-primary">Águios</strong> é um ministério itinerante e interdenominacional, dedicado ao ensino bíblico com ênfase nas doutrinas fundamentais da Palavra de Deus.
             </p>
             
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Após pastorearem igrejas evangélicas nas cidades de Parnamirim e Lagoa Salgada – ambas no estado do Rio Grande do Norte –, o casal de pastores <strong className="text-aguios-primary">Wendell e Oriana Costa</strong> iniciou o ministério, com a finalidade de ensinar as doutrinas básicas de Cristo em qualquer igreja que esteja disposta a receber os ensinamentos.
+              Fundado em 2017 pelos pastores <strong className="text-aguios-primary">Wendell e Oriana Costa</strong>, o ministério tem como propósito fortalecer a fé cristã e promover o conhecimento das verdades essenciais do Evangelho.
             </p>
 
+            <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+              Atualmente, o Águios é composto por quatro pregadores:
+            </p>
+
+            <ul className="text-lg text-muted-foreground leading-relaxed space-y-2 ml-6 list-disc">
+              <li><strong className="text-aguios-primary">Pr. Wendell Costa</strong> (Igreja Batista Vida Nova)</li>
+              <li><strong className="text-aguios-primary">Bruna Monastirski</strong> (Igreja Batista Vida Nova)</li>
+              <li><strong className="text-aguios-primary">Rulyanne Silva</strong> (Assembleia de Deus Bom Refúgio)</li>
+              <li><strong className="text-aguios-primary">Kevin Costa</strong> (Ministério Defesa da Fé)</li>
+            </ul>
+
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Considerando, também, a importância da Internet como veículo de propagação do conhecimento, o Águios atua fortemente nessa área, usando as suas redes sociais como plataforma para divulgação dos fundamentos da Palavra de Deus à Sua igreja.
+              Reconhecendo a importância da Internet como instrumento de edificação e alcance, o Águios também atua intensamente no ambiente digital, utilizando suas redes sociais para compartilhar o ensino da Palavra e edificar a Igreja de Cristo.
             </p>
           </div>
 
