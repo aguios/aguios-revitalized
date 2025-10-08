@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Facebook, Youtube, Mail } from "lucide-react";
+import { Menu, X, Facebook, Youtube, Mail, Instagram } from "lucide-react";
 import aguiosLogo from "@/assets/aguios-logo.png";
 
 export const Header = () => {
@@ -75,6 +75,14 @@ export const Header = () => {
               <Facebook className="w-5 h-5" />
             </a>
             <a 
+              href="https://www.instagram.com/aguiosensino" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-aguios-primary aguios-transition"
+            >
+              <Instagram className="w-5 h-5" />
+            </a>
+            <a 
               href="https://www.youtube.com/aguios" 
               target="_blank" 
               rel="noopener noreferrer"
@@ -145,6 +153,14 @@ export const Header = () => {
                   className="text-muted-foreground hover:text-aguios-primary aguios-transition"
                 >
                   <Facebook className="w-5 h-5" />
+                </a>
+                <a 
+                  href="https://www.instagram.com/aguiosensino" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-aguios-primary aguios-transition"
+                >
+                  <Instagram className="w-5 h-5" />
                 </a>
                 <a 
                   href="https://www.youtube.com/aguios" 

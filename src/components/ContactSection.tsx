@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Mail, Facebook, Youtube, MapPin, Phone, MessageCircle } from "lucide-react";
+import { Mail, Facebook, Youtube, MapPin, Phone, MessageCircle, Instagram } from "lucide-react";
 
 export const ContactSection = () => {
   return (
@@ -19,7 +19,7 @@ export const ContactSection = () => {
         </div>
 
         {/* Contact Methods Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Email */}
           <Card className="p-8 text-center border-none aguios-shadow aguios-hover-lift bg-gradient-to-br from-aguios-primary/5 to-aguios-primary/10">
             <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-aguios-primary/10 flex items-center justify-center">
@@ -55,6 +55,25 @@ export const ContactSection = () => {
             >
               <Facebook className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
               Visitar Página
+            </Button>
+          </Card>
+
+          {/* Instagram */}
+          <Card className="p-8 text-center border-none aguios-shadow aguios-hover-lift bg-gradient-to-br from-pink-500/5 to-pink-500/10">
+            <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-pink-500/10 flex items-center justify-center">
+              <Instagram className="w-8 h-8 text-pink-500" />
+            </div>
+            <h3 className="text-xl font-bold mb-3 text-foreground">Instagram</h3>
+            <p className="text-muted-foreground mb-4">
+              Siga-nos e veja nossos conteúdos diários
+            </p>
+            <Button 
+              variant="outline"
+              className="group border-pink-500/20 text-pink-600 hover:bg-pink-500/10"
+              onClick={() => window.open('https://www.instagram.com/aguiosensino', '_blank')}
+            >
+              <Instagram className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
+              @aguiosensino
             </Button>
           </Card>
 
