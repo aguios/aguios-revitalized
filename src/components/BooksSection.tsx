@@ -24,7 +24,7 @@ export const BooksSection = () => {
       image: capaTempoDeChorar
     },
     {
-      title: "Mulher Cristã",
+      title: "Mulheres Cristãs",
       subtitle: "Vidas com propósitos",
       author: "Rulyanne Silva",
       description: "O livro trata sobre os diversos papéis da mulher cristã: adoradora, esposa, mãe e muito mais.",
