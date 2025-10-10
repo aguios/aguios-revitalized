@@ -13,7 +13,8 @@ export const BooksSection = () => {
       author: "Pr. Wendell Costa",
       description: "Uma profunda reflexão sobre o amor de Deus como Sua natureza essencial e como isso transforma nossa compreensão da fé cristã.",
       year: 2019,
-      image: capaAmor
+      image: capaAmor,
+      purchaseLink: "https://produto.mercadolivre.com.br/MLB-3303352579-livro-amor-a-verdadeira-natureza-de-deus-_JM"
     },
     {
       title: "Tempo de Chorar, Tempo de Crescer",
@@ -21,7 +22,8 @@ export const BooksSection = () => {
       author: "Bruna Monastirski",
       description: "Uma análise bíblica sobre o propósito do sofrimento na vida cristã e como Deus usa as dificuldades para nosso crescimento espiritual.",
       year: 2019,
-      image: capaTempoDeChorar
+      image: capaTempoDeChorar,
+      purchaseLink: "https://produto.mercadolivre.com.br/MLB-3303339269-livro-tempo-de-chorar-tempo-de-crescer-_JM"
     },
     {
       title: "Mulheres Cristãs",
@@ -29,7 +31,8 @@ export const BooksSection = () => {
       author: "Rulyanne Silva",
       description: "O livro trata sobre os diversos papéis da mulher cristã: adoradora, esposa, mãe e muito mais.",
       year: 2023,
-      image: capaMulheresCristas
+      image: capaMulheresCristas,
+      purchaseLink: "https://produto.mercadolivre.com.br/MLB-3598327796-livro-mulheres-crists-vidas-com-proposito-_JM"
     },
     {
       title: "A Parábola do Semeador",
@@ -37,7 +40,8 @@ export const BooksSection = () => {
       author: "Bruna Monastirski e Wendell Costa",
       description: "Revelações sobre como um discípulo de Jesus pode se tornar frutífero em Deus através do estudo da parábola do semeador.",
       year: 2025,
-      image: capaParabolaDoSemeador
+      image: capaParabolaDoSemeador,
+      purchaseLink: "https://produto.mercadolivre.com.br/MLB-4431979568-a-parabola-do-semeador-fundamentos-para-uma-vida-frutifera-_JM"
     }
   ];
 
@@ -87,11 +91,21 @@ export const BooksSection = () => {
                   </p>
                 </div>
 
-                {/* Year Badge */}
-                <div className="flex justify-center">
+                {/* Year Badge and Purchase Button */}
+                <div className="flex flex-col items-center gap-3">
                   <span className="bg-gradient-to-r from-aguios-primary to-aguios-secondary text-white px-3 py-1 rounded-full text-sm font-medium">
                     Lançamento {book.year}
                   </span>
+                  <Button
+                    variant="gradient"
+                    size="sm"
+                    className="group"
+                    onClick={() => window.open(book.purchaseLink, '_blank')}
+                  >
+                    <ShoppingCart className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
+                    Comprar Livro
+                    <ExternalLink className="w-3 h-3 ml-2" />
+                  </Button>
                 </div>
               </div>
             </Card>
