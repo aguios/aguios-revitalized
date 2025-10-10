@@ -112,28 +112,6 @@ export const BooksSection = () => {
           ))}
         </div>
 
-        {/* Call to Action */}
-        <div className="text-center">
-          <Card className="p-8 border-none aguios-shadow bg-gradient-to-r from-aguios-primary/5 to-aguios-secondary/5">
-            <h3 className="text-2xl font-bold mb-4 text-aguios-primary">
-              Adquira Nossos Livros
-            </h3>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Aprofunde seus conhecimentos bíblicos com nossos estudos cuidadosamente elaborados. 
-              Visite nossa loja virtual para adquirir seus exemplares.
-            </p>
-            <Button 
-              variant="gradient"
-              size="lg"
-              className="group"
-              onClick={() => window.open('https://aguios.mercadoshops.com.br/', '_blank')}
-            >
-              <ShoppingCart className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-              Visitar Loja Virtual
-              <ExternalLink className="w-4 h-4 ml-2" />
-            </Button>
-          </Card>
-        </div>
       </div>
     </section>
   );
