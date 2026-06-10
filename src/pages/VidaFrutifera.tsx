@@ -24,8 +24,6 @@ import {
 } from "lucide-react";
 import heroBg from "@/assets/vida-frutifera-hero.jpg";
 import capaParabolaDoSemeador from "@/assets/capa_a_parabola_do_semeador.jpg";
-import wendellAsset from "@/assets/wendell-costa.jpg.asset.json";
-import brunaAsset from "@/assets/bruna-monastirski.jpg.asset.json";
 
 const WHATSAPP_URL =
   "https://wa.me/558488270998?text=" +
@@ -405,13 +403,13 @@ const VidaFrutifera = () => {
             {[
               {
                 name: "Pr. Wendell Costa",
-                photo: wendellAsset.url,
+                photo: "/images/vida-frutifera/foto-wendell.jpg",
                 alt: "Pr. Wendell Costa - Ministério Águios",
                 desc: "Pastor, professor bíblico e fundador do Ministério Águios. Dedica-se ao ensino das Escrituras, à formação de discípulos e à edificação da igreja por meio de ministrações, estudos bíblicos, seminários e conteúdos voltados ao crescimento espiritual.",
               },
               {
                 name: "Bruna Monastirski",
-                photo: brunaAsset.url,
+                photo: "/images/vida-frutifera/foto-bruna.jpg",
                 alt: "Bruna Monastirski - Projeto Vida Frutífera",
                 desc: "Professora bíblica e coautora do projeto Vida Frutífera. Atua no ensino da Palavra e no discipulado cristão, com ênfase na formação de uma vida espiritual profunda, perseverante e frutífera.",
               },
