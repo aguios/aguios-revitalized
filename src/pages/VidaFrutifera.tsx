@@ -516,26 +516,24 @@ const VidaFrutifera = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              onClick={() => {
-                // Placeholder — configurar posteriormente
-                window.open("#", "_blank");
-              }}
+              asChild
               className="bg-white text-aguios-primary hover:bg-white/90"
             >
-              <MessageCircle className="w-5 h-5 mr-2" />
-              Falar pelo WhatsApp
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="w-5 h-5 mr-2" />
+                Falar pelo WhatsApp
+              </a>
             </Button>
             <Button
               variant="outline"
               size="lg"
-              onClick={() => {
-                window.location.href =
-                  "mailto:ministerioaguios@gmail.com?subject=Convite — Seminário Vida Frutífera";
-              }}
+              asChild
               className="border-white/40 text-white hover:bg-white/10 bg-transparent"
             >
-              <Mail className="w-5 h-5 mr-2" />
-              Enviar convite por e-mail
+              <a href={EMAIL_URL}>
+                <Mail className="w-5 h-5 mr-2" />
+                Enviar convite por e-mail
+              </a>
             </Button>
           </div>
         </div>
