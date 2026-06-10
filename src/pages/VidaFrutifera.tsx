@@ -24,6 +24,23 @@ import {
 } from "lucide-react";
 import heroBg from "@/assets/vida-frutifera-hero.jpg";
 import capaParabolaDoSemeador from "@/assets/capa_a_parabola_do_semeador.jpg";
+import wendellAsset from "@/assets/wendell-costa.jpg.asset.json";
+import brunaAsset from "@/assets/bruna-monastirski.jpg.asset.json";
+
+const WHATSAPP_URL =
+  "https://wa.me/558488270998?text=" +
+  encodeURIComponent(
+    "Olá! Gostaria de saber mais informações sobre o Seminário Vida Frutífera."
+  );
+
+const EMAIL_URL =
+  "mailto:ministerioaguios@gmail.com" +
+  "?subject=" +
+  encodeURIComponent("Convite para o Seminário Vida Frutífera") +
+  "&body=" +
+  encodeURIComponent(
+    "Olá, Ministério Águios!\n\nGostaria de saber mais informações sobre o Seminário Vida Frutífera e a possibilidade de levá-lo para nossa igreja/ministério.\n\nAguardo retorno."
+  );
 
 const scrollToId = (id: string) => {
   const el = document.getElementById(id);
@@ -388,19 +405,30 @@ const VidaFrutifera = () => {
             {[
               {
                 name: "Pr. Wendell Costa",
+                photo: wendellAsset.url,
+                alt: "Pr. Wendell Costa - Ministério Águios",
                 desc: "Pastor, professor bíblico e fundador do Ministério Águios. Dedica-se ao ensino das Escrituras, à formação de discípulos e à edificação da igreja por meio de ministrações, estudos bíblicos, seminários e conteúdos voltados ao crescimento espiritual.",
               },
               {
                 name: "Bruna Monastirski",
+                photo: brunaAsset.url,
+                alt: "Bruna Monastirski - Projeto Vida Frutífera",
                 desc: "Professora bíblica e coautora do projeto Vida Frutífera. Atua no ensino da Palavra e no discipulado cristão, com ênfase na formação de uma vida espiritual profunda, perseverante e frutífera.",
               },
             ].map((p, i) => (
               <Card
                 key={i}
-                className="p-8 border-none aguios-shadow aguios-hover-lift text-center"
+                className="p-8 border-none aguios-shadow aguios-hover-lift text-center flex flex-col h-full"
               >
-                <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-aguios-primary/15 to-aguios-secondary/15 flex items-center justify-center overflow-hidden">
-                  <Users className="w-14 h-14 text-aguios-primary/60" />
+                <div className="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden ring-4 ring-aguios-primary/10 aguios-shadow">
+                  <img
+                    src={p.photo}
+                    alt={p.alt}
+                    className="w-full h-full object-cover object-top"
+                    loading="lazy"
+                    width={320}
+                    height={320}
+                  />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-aguios-primary">
                   {p.name}
@@ -488,26 +516,24 @@ const VidaFrutifera = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              onClick={() => {
-                // Placeholder — configurar posteriormente
-                window.open("#", "_blank");
-              }}
+              asChild
               className="bg-white text-aguios-primary hover:bg-white/90"
             >
-              <MessageCircle className="w-5 h-5 mr-2" />
-              Falar pelo WhatsApp
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="w-5 h-5 mr-2" />
+                Falar pelo WhatsApp
+              </a>
             </Button>
             <Button
               variant="outline"
               size="lg"
-              onClick={() => {
-                window.location.href =
-                  "mailto:ministerioaguios@gmail.com?subject=Convite — Seminário Vida Frutífera";
-              }}
+              asChild
               className="border-white/40 text-white hover:bg-white/10 bg-transparent"
             >
-              <Mail className="w-5 h-5 mr-2" />
-              Enviar convite por e-mail
+              <a href={EMAIL_URL}>
+                <Mail className="w-5 h-5 mr-2" />
+                Enviar convite por e-mail
+              </a>
             </Button>
           </div>
         </div>
