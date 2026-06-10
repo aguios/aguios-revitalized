@@ -24,6 +24,23 @@ import {
 } from "lucide-react";
 import heroBg from "@/assets/vida-frutifera-hero.jpg";
 import capaParabolaDoSemeador from "@/assets/capa_a_parabola_do_semeador.jpg";
+import wendellAsset from "@/assets/wendell-costa.jpg.asset.json";
+import brunaAsset from "@/assets/bruna-monastirski.jpg.asset.json";
+
+const WHATSAPP_URL =
+  "https://wa.me/558488270998?text=" +
+  encodeURIComponent(
+    "Olá! Gostaria de saber mais informações sobre o Seminário Vida Frutífera."
+  );
+
+const EMAIL_URL =
+  "mailto:ministerioaguios@gmail.com" +
+  "?subject=" +
+  encodeURIComponent("Convite para o Seminário Vida Frutífera") +
+  "&body=" +
+  encodeURIComponent(
+    "Olá, Ministério Águios!\n\nGostaria de saber mais informações sobre o Seminário Vida Frutífera e a possibilidade de levá-lo para nossa igreja/ministério.\n\nAguardo retorno."
+  );
 
 const scrollToId = (id: string) => {
   const el = document.getElementById(id);
