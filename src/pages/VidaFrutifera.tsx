@@ -405,19 +405,30 @@ const VidaFrutifera = () => {
             {[
               {
                 name: "Pr. Wendell Costa",
+                photo: wendellAsset.url,
+                alt: "Pr. Wendell Costa - Ministério Águios",
                 desc: "Pastor, professor bíblico e fundador do Ministério Águios. Dedica-se ao ensino das Escrituras, à formação de discípulos e à edificação da igreja por meio de ministrações, estudos bíblicos, seminários e conteúdos voltados ao crescimento espiritual.",
               },
               {
                 name: "Bruna Monastirski",
+                photo: brunaAsset.url,
+                alt: "Bruna Monastirski - Projeto Vida Frutífera",
                 desc: "Professora bíblica e coautora do projeto Vida Frutífera. Atua no ensino da Palavra e no discipulado cristão, com ênfase na formação de uma vida espiritual profunda, perseverante e frutífera.",
               },
             ].map((p, i) => (
               <Card
                 key={i}
-                className="p-8 border-none aguios-shadow aguios-hover-lift text-center"
+                className="p-8 border-none aguios-shadow aguios-hover-lift text-center flex flex-col h-full"
               >
-                <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-aguios-primary/15 to-aguios-secondary/15 flex items-center justify-center overflow-hidden">
-                  <Users className="w-14 h-14 text-aguios-primary/60" />
+                <div className="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden ring-4 ring-aguios-primary/10 aguios-shadow">
+                  <img
+                    src={p.photo}
+                    alt={p.alt}
+                    className="w-full h-full object-cover object-top"
+                    loading="lazy"
+                    width={320}
+                    height={320}
+                  />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-aguios-primary">
                   {p.name}
