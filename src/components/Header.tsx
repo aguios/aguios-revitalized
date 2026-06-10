@@ -1,16 +1,32 @@
 import { useState } from "react";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Facebook, Youtube, Mail, Instagram } from "lucide-react";
 import aguiosLogo from "@/assets/aguios-logo.png";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    if (location.pathname !== "/") {
+      navigate("/");
+      // Wait for navigation/render
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) element.scrollIntoView({ behavior: "smooth" });
+      }, 80);
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) element.scrollIntoView({ behavior: "smooth" });
     }
+    setIsMenuOpen(false);
+  };
+
+  const goToVidaFrutifera = () => {
+    navigate("/vidafrutifera");
+    window.scrollTo({ top: 0, behavior: "smooth" });
     setIsMenuOpen(false);
   };
 
@@ -19,44 +35,50 @@ export const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <img 
-              src={aguiosLogo} 
-              alt="Águios Logo" 
+          <Link to="/" className="flex items-center space-x-3">
+            <img
+              src={aguiosLogo}
+              alt="Águios Logo"
               className="w-10 h-10 object-contain"
             />
             <span className="text-2xl font-bold aguios-gradient-text">
               ÁGUIOS
             </span>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <button 
+          <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
+            <button
               onClick={() => scrollToSection("quem-somos")}
               className="text-foreground hover:text-aguios-primary aguios-transition font-medium"
             >
               Quem Somos
             </button>
-            <button 
+            <button
               onClick={() => scrollToSection("livros")}
               className="text-foreground hover:text-aguios-primary aguios-transition font-medium"
             >
               Livros
             </button>
-            <button 
+            <button
               onClick={() => scrollToSection("videos")}
               className="text-foreground hover:text-aguios-primary aguios-transition font-medium"
             >
               Vídeos
             </button>
-            <button 
+            <button
               onClick={() => scrollToSection("agenda")}
               className="text-foreground hover:text-aguios-primary aguios-transition font-medium"
             >
               Agenda
             </button>
-            <button 
+            <button
+              onClick={goToVidaFrutifera}
+              className="text-foreground hover:text-aguios-primary aguios-transition font-medium"
+            >
+              Vida Frutífera
+            </button>
+            <button
               onClick={() => scrollToSection("contato")}
               className="text-foreground hover:text-aguios-primary aguios-transition font-medium"
             >
@@ -65,32 +87,32 @@ export const Header = () => {
           </nav>
 
           {/* Social Links */}
-          <div className="hidden md:flex items-center space-x-3">
-            <a 
-              href="https://www.facebook.com/aguios.org" 
-              target="_blank" 
+          <div className="hidden lg:flex items-center space-x-3">
+            <a
+              href="https://www.facebook.com/aguios.org"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-aguios-primary aguios-transition"
             >
               <Facebook className="w-5 h-5" />
             </a>
-            <a 
-              href="https://www.instagram.com/aguiosensino" 
-              target="_blank" 
+            <a
+              href="https://www.instagram.com/aguiosensino"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-aguios-primary aguios-transition"
             >
               <Instagram className="w-5 h-5" />
             </a>
-            <a 
-              href="https://www.youtube.com/aguios" 
-              target="_blank" 
+            <a
+              href="https://www.youtube.com/aguios"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-aguios-primary aguios-transition"
             >
               <Youtube className="w-5 h-5" />
             </a>
-            <a 
+            <a
               href="mailto:ministerioaguios@gmail.com"
               className="text-muted-foreground hover:text-aguios-primary aguios-transition"
             >
@@ -113,64 +135,70 @@ export const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4 border-t border-border">
             <nav className="flex flex-col space-y-4 pt-4">
-              <button 
+              <button
                 onClick={() => scrollToSection("quem-somos")}
                 className="text-left text-foreground hover:text-aguios-primary aguios-transition font-medium"
               >
                 Quem Somos
               </button>
-              <button 
+              <button
                 onClick={() => scrollToSection("livros")}
                 className="text-left text-foreground hover:text-aguios-primary aguios-transition font-medium"
               >
                 Livros
               </button>
-              <button 
+              <button
                 onClick={() => scrollToSection("videos")}
                 className="text-left text-foreground hover:text-aguios-primary aguios-transition font-medium"
               >
                 Vídeos
               </button>
-              <button 
+              <button
                 onClick={() => scrollToSection("agenda")}
                 className="text-left text-foreground hover:text-aguios-primary aguios-transition font-medium"
               >
                 Agenda
               </button>
-              <button 
+              <button
+                onClick={goToVidaFrutifera}
+                className="text-left text-foreground hover:text-aguios-primary aguios-transition font-medium"
+              >
+                Vida Frutífera
+              </button>
+              <button
                 onClick={() => scrollToSection("contato")}
                 className="text-left text-foreground hover:text-aguios-primary aguios-transition font-medium"
               >
                 Contato
               </button>
-              
+
               {/* Mobile Social Links */}
               <div className="flex items-center space-x-4 pt-4 border-t border-border">
-                <a 
-                  href="https://www.facebook.com/aguios.org" 
-                  target="_blank" 
+                <a
+                  href="https://www.facebook.com/aguios.org"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-aguios-primary aguios-transition"
                 >
                   <Facebook className="w-5 h-5" />
                 </a>
-                <a 
-                  href="https://www.instagram.com/aguiosensino" 
-                  target="_blank" 
+                <a
+                  href="https://www.instagram.com/aguiosensino"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-aguios-primary aguios-transition"
                 >
                   <Instagram className="w-5 h-5" />
                 </a>
-                <a 
-                  href="https://www.youtube.com/aguios" 
-                  target="_blank" 
+                <a
+                  href="https://www.youtube.com/aguios"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-aguios-primary aguios-transition"
                 >
                   <Youtube className="w-5 h-5" />
                 </a>
-                <a 
+                <a
                   href="mailto:ministerioaguios@gmail.com"
                   className="text-muted-foreground hover:text-aguios-primary aguios-transition"
                 >

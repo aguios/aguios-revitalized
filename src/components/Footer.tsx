@@ -1,6 +1,23 @@
 import { Facebook, Youtube, Mail, Heart, Instagram } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export const Footer = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const goToSection = (sectionId: string) => {
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const el = document.getElementById(sectionId);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 80);
+    } else {
+      const el = document.getElementById(sectionId);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const currentYear = new Date().getFullYear();
 
   return (
