@@ -1,6 +1,23 @@
 import { Facebook, Youtube, Mail, Heart, Instagram } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export const Footer = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const goToSection = (sectionId: string) => {
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const el = document.getElementById(sectionId);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 80);
+    } else {
+      const el = document.getElementById(sectionId);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const currentYear = new Date().getFullYear();
 
   return (
@@ -54,55 +71,51 @@ export const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Navegação</h4>
             <ul className="space-y-2">
               <li>
-                <button 
-                  onClick={() => {
-                    const element = document.getElementById("quem-somos");
-                    if (element) element.scrollIntoView({ behavior: "smooth" });
-                  }}
+                <button
+                  onClick={() => goToSection("quem-somos")}
                   className="text-white/80 hover:text-white aguios-transition"
                 >
                   Quem Somos
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => {
-                    const element = document.getElementById("livros");
-                    if (element) element.scrollIntoView({ behavior: "smooth" });
-                  }}
+                <button
+                  onClick={() => goToSection("livros")}
                   className="text-white/80 hover:text-white aguios-transition"
                 >
                   Livros
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => {
-                    const element = document.getElementById("videos");
-                    if (element) element.scrollIntoView({ behavior: "smooth" });
-                  }}
+                <button
+                  onClick={() => goToSection("videos")}
                   className="text-white/80 hover:text-white aguios-transition"
                 >
                   Vídeos
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => {
-                    const element = document.getElementById("agenda");
-                    if (element) element.scrollIntoView({ behavior: "smooth" });
-                  }}
+                <button
+                  onClick={() => goToSection("agenda")}
                   className="text-white/80 hover:text-white aguios-transition"
                 >
                   Agenda
                 </button>
               </li>
               <li>
-                <button 
+                <button
                   onClick={() => {
-                    const element = document.getElementById("contato");
-                    if (element) element.scrollIntoView({ behavior: "smooth" });
+                    navigate("/vidafrutifera");
+                    window.scrollTo({ top: 0, behavior: "smooth" });
                   }}
+                  className="text-white/80 hover:text-white aguios-transition"
+                >
+                  Vida Frutífera
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => goToSection("contato")}
                   className="text-white/80 hover:text-white aguios-transition"
                 >
                   Contato
